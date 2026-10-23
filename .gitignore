@@ -1,0 +1,11 @@
+# Your real keys. Never commit these.
+.env
+.env.local
+
+# Local build checkout of the IBM Cloud VPC connector
+.build/
+
+# Claude Code per-user settings
+.claude/settings.local.json
+
+.DS_Store

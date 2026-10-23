@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "pagerduty": {
+      "type": "http",
+      "url": "${PAGERDUTY_MCP_URL:-https://mcp.pagerduty.com/mcp}",
+      "headers": {
+        "Authorization": "Token token=${PAGERDUTY_API_KEY:-}"
+      }
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "-e", "GITHUB_READ_ONLY=1",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN:-}"
+      }
+    },
+    "env0": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "ENV0_API_KEY",
+        "-e", "ENV0_API_SECRET",
+        "-e", "ENV0_ORGANIZATION_ID",
+        "env0/mcp-server"
+      ],
+      "env": {
+        "ENV0_API_KEY": "${ENV0_API_KEY:-}",
+        "ENV0_API_SECRET": "${ENV0_API_SECRET:-}",
+        "ENV0_ORGANIZATION_ID": "${ENV0_ORGANIZATION_ID:-}"
+      }
+    },
+    "ibmcloud": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "IBMCLOUD_API_KEY",
+        "ibmcloud-vpc-mcp"
+      ],
+      "env": {
+        "IBMCLOUD_API_KEY": "${IBMCLOUD_API_KEY:-}"
+      }
+    }
+  }
+}

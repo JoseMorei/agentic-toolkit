@@ -64,6 +64,7 @@ is allowed and what is not.
 ```
 agentic-toolkit/
 ├── README.md                  ← you are here
+├── LICENSE                    ← MIT license
 ├── .mcp.json                  ← the four connectors (PagerDuty, GitHub, env0, IBM Cloud)
 ├── .claude/
 │   ├── settings.json          ← the safety rules (what the AI may and may not do)
@@ -191,6 +192,10 @@ The connectors are built and maintained by their owners:
 - [env0 MCP Server](https://github.com/env0/mcp-server) (official, by env0)
 - [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) (community project, listed in
   [IBM's MCP catalog](https://github.com/IBM/mcp); not an official IBM product)
+
+## License
+
+Released under the [MIT License](LICENSE).
 
 ## Disclaimer
 
